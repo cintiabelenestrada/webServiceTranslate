@@ -21,8 +21,16 @@ export class DireccionIPComponent {
       (data:any) => {
         this.datosIp = new DatosIp(
           data.city, 
-          data.country
-          );
+          data.country,
+           {
+            abbr: data.timezone.abbr,
+            date: data.timezone.date,
+            id: data.timezone.id,
+            name: data.timezone.name,
+            offset: data.timezone.offset,
+            time: data.timezone.time
+          });
+
         this.datosIp = data;
 
         console.log(this.datosIp);

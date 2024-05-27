@@ -13,7 +13,7 @@ export class DireccionIpService {
       const httpOptions ={
         headers: new HttpHeaders({
           'content-type': 'application/x-www-form-urlencoded',
-          'X-RapidAPI-Key': 'bab76fe0d0msh81e9d1b3f602fc5p18588bjsn1d91f66cc06a',
+          'X-RapidAPI-Key': 'b53b4ab976msh8c7cbb3fae1a17dp173399jsn8f8f1f6ecb8c',
           'X-RapidAPI-Host': 'community-neutrino-ip-info.p.rapidapi.com'
         }),
       }

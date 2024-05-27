@@ -13,6 +13,12 @@
     <h5>INFORMACION DE LA IP</h5>
     <p><strong>País:</strong> {{ datosIp.country }}</p>
     <p><strong>Ciudad:</strong> {{ datosIp.city }}</p>
+
+    <H5>INFORMACION DE LA UBICACION DE LA IP</H5>
+    <p><strong>Fecha Local:</strong> {{ datosIp.timezone.date }}</p>
+    <p><strong>Hora Local:</strong> {{ datosIp.timezone.time }}</p>
+    <p><strong>Zona Horaria:</strong> {{ datosIp.timezone.offset }}</p>
+
    }
 
 </div>
