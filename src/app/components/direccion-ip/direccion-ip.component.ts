@@ -37,6 +37,21 @@ export class DireccionIPComponent {
 
         console.log(this.datosIp);
         console.log(this.direccionIP);
+
+        this.mostrarDireccion();
+      },
+      (error:any) => {
+        console.log(error);
+      } 
+    );
+  }
+
+  mostrarDireccion() {
+    console.log("asdfasdfasdfsdfsdfs");
+    
+    this.direccionIpService.getLatitudeLongitude(this.datosIp.latitude, this.datosIp.longitude).subscribe(
+      (data:any) => {
+        console.log(data);
       },
       (error:any) => {
         console.log(error);
