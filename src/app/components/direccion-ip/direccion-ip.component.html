@@ -1,2 +1,8 @@
-<p>direccion-ip works!</p>
-<button type="button" id="traducir" (click)="ObtenerIps()">Obtener IPS</button>
+<H3 class="mt-5">GESTION DE DIRECCION IP</H3>
+<form>
+    <div class="mb-3">
+        <label for="DireccionIp" class="form-label">Ingrese Direccion Ip:</label>
+        <input type="text" class="form-control" id="DireccionIp" name="DireccionIp" value="" [(ngModel)]="direccionIP">
+        <button type="button" id="DireccionIp" name="DireccionIp" (click)="IngresarIp()">IP ingresada</button>
+    </div>     
+</form>

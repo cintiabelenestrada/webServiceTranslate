@@ -9,7 +9,7 @@ export class DireccionIpService {
 
   constructor(private _http:HttpClient) { }
    
-    public getDireccionesIP(): Observable<any>{
+    public getDireccionesIP(direccionIP: string): Observable<any>{
       const httpOptions ={
         headers: new HttpHeaders({
           'content-type': 'application/x-www-form-urlencoded',
@@ -18,7 +18,7 @@ export class DireccionIpService {
         }),
       }
       const body = new HttpParams()
-        .set('ip', '162.209.106.137');
+        .set('ip', direccionIP);
 
       return this._http.post('https://community-neutrino-ip-info.p.rapidapi.com/ip-info',body, httpOptions);
     }
