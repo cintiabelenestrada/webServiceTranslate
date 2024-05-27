@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DireccionIpService } from '../../services/direccionIp.service';
 import { FormsModule } from '@angular/forms';
+import { DatosIp } from '../../models/datos-ip';
 
 @Component({
   selector: 'app-direccion-ip',
@@ -10,15 +11,22 @@ import { FormsModule } from '@angular/forms';
 })
 export class DireccionIPComponent {
   direccionIP: string = "";
-
+  datosIp!: DatosIp;
+  
   constructor(private direccionIpService: DireccionIpService){
   }
 
   IngresarIp(){
     this.direccionIpService.getDireccionesIP(this.direccionIP).subscribe(
       (data:any) => {
+        this.datosIp = new DatosIp(
+          data.city, 
+          data.country
+          );
+        this.datosIp = data;
+
+        console.log(this.datosIp);
         console.log(this.direccionIP);
-        console.log(data);
       },
       (error:any) => {
         console.log(error);

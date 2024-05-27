@@ -2,7 +2,17 @@
 <form>
     <div class="mb-3">
         <label for="DireccionIp" class="form-label">Ingrese Direccion Ip:</label>
-        <input type="text" class="form-control" id="DireccionIp" name="DireccionIp" value="" [(ngModel)]="direccionIP">
+        <input type="text" class="form-control" id="DireccionIp" name="DireccionIp" value=""  [(ngModel)]="direccionIP">
         <button type="button" id="DireccionIp" name="DireccionIp" (click)="IngresarIp()">IP ingresada</button>
     </div>     
 </form>
+
+<h3 class="mt-5">RESULTADOS ENCONTRADOS</h3>
+<div>
+   @if (datosIp){
+    <h5>INFORMACION DE LA IP</h5>
+    <p><strong>País:</strong> {{ datosIp.country }}</p>
+    <p><strong>Ciudad:</strong> {{ datosIp.city }}</p>
+   }
+
+</div>
