@@ -1,6 +1,8 @@
 export class DatosIp {
     city: string;
     country: string;
+    latitude: number;
+    longitude: number;
     timezone: {
         abbr: string;
         date: string;
@@ -13,6 +15,8 @@ export class DatosIp {
     constructor(
         city: string, 
         country: string, 
+        latitude: number, 
+        longitude: number,
         timezone: {
             abbr: string;
             date: string;
@@ -25,5 +29,7 @@ export class DatosIp {
         this.city = city; 
         this.country = country;
         this.timezone = timezone;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }

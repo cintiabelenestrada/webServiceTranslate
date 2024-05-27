@@ -22,6 +22,8 @@ export class DireccionIPComponent {
         this.datosIp = new DatosIp(
           data.city, 
           data.country,
+          data.latitude,
+          data.longitude,
            {
             abbr: data.timezone.abbr,
             date: data.timezone.date,
