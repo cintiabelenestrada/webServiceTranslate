@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DireccionIpService } from '../../services/direccionIp.service';
 import { FormsModule } from '@angular/forms';
 import { DatosIp } from '../../models/datos-ip';
+import { Direccion } from '../../models/datosAdress';
 
 @Component({
   selector: 'app-direccion-ip',
@@ -12,7 +13,7 @@ import { DatosIp } from '../../models/datos-ip';
 export class DireccionIPComponent {
   direccionIP: string = "";
   datosIp!: DatosIp;
-  
+  addressDetails!: Direccion;
   constructor(private direccionIpService: DireccionIpService){
   }
 
@@ -47,12 +48,10 @@ export class DireccionIPComponent {
   }
 
   mostrarDireccion() {
-    console.log("asdfasdfasdfsdfsdfs");
-    
     this.direccionIpService.getLatitudeLongitude(this.datosIp.latitude, this.datosIp.longitude).subscribe(
       (data:any) => {
-        console.log(data);
-      },
+          this.addressDetails = data.Results[0];
+        },
       (error:any) => {
         console.log(error);
       } 

@@ -20,6 +20,19 @@
     <p><strong>Zona Horaria:</strong> {{ datosIp.timezone.offset }}</p>
 
     <a class="nav-link" href="https://maps.google.com/?q={{datosIp.latitude}},{{datosIp.longitude}}">Ir al lugar Link</a>
-   }
+    
+    }
 
+    <h5>INFORMACION DE LA DIRECCION</h5>
+    <div>
+       @if (addressDetails){
+            <p><strong>Dirección:</strong> {{ addressDetails.address }}</p>
+            <p><strong>Número:</strong> {{ addressDetails.addressNumber }}</p>
+            <p><strong>Ciudad:</strong> {{ addressDetails.city }}</p>
+            <p><strong>Región:</strong> {{ addressDetails.region }}</p>
+            <p><strong>Subregión:</strong> {{ addressDetails.subregion }}</p>
+            <p><strong>País:</strong> {{ addressDetails.country }}</p>
+            <hr>
+       }        
+    </div>
 </div>
