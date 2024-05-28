@@ -51,6 +51,9 @@ export class DireccionIPComponent {
     this.direccionIpService.getLatitudeLongitude(this.datosIp.latitude, this.datosIp.longitude).subscribe(
       (data:any) => {
           this.addressDetails = data.Results[0];
+          console.log("data: ", JSON.stringify(data));
+          console.log("data.Results: ", JSON.stringify(data.Results));
+          console.log("data.Results[0]: ", JSON.stringify(data.Results[0]));
         },
       (error:any) => {
         console.log(error);
