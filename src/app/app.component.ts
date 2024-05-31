@@ -10,5 +10,5 @@ import { DireccionIPComponent } from "./components/direccion-ip/direccion-ip.com
     imports: [RouterOutlet, DireccionIPComponent]
 })
 export class AppComponent {
-  title = 'webServiceTranslate';
+  title = 'ip';
 }
