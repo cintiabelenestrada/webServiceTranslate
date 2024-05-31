@@ -32,5 +32,6 @@ export class DireccionIpService {
       })
     }
     return this._http.get(`https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi?lat=${latitude}&lng=${longitude}`, httpOptions);
+    console.log("url", JSON.stringify(`https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi?lat=${latitude}&lng=${longitude}`));
   } 
 }

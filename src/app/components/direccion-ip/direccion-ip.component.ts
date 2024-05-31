@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { DireccionIpService } from '../../services/direccionIp.service';
 import { FormsModule } from '@angular/forms';
 import { DatosIp } from '../../models/datos-ip';
-import { interfaceDireccion } from '../../models/datosAdress';
+import { Direccion } from '../../models/datosAdress';
+import { log } from 'node:console';
 
 @Component({
   selector: 'app-direccion-ip',
@@ -13,7 +14,7 @@ import { interfaceDireccion } from '../../models/datosAdress';
 export class DireccionIPComponent {
   direccionIP: string = "";
   datosIp!: DatosIp;
-  addressDetails!: interfaceDireccion;
+  addressDetails!: Direccion;
   constructor(private direccionIpService: DireccionIpService){
   }
 
@@ -49,10 +50,13 @@ export class DireccionIPComponent {
   mostrarDireccion() {
     this.direccionIpService.getLatitudeLongitude(this.datosIp.latitude, this.datosIp.longitude).subscribe(
       (data:any) => {
+          console.log("data: ", JSON.stringify(data)); // toda la info q devuelve la api
+          console.log("data.Results[0]: ", JSON.stringify(data.Results[0])); // la info que yo necesito
+          // creamos la variable y la modelamos
           this.addressDetails = data.Results[0];
-          console.log("data: ", JSON.stringify(data));
-          console.log("data.Results: ", JSON.stringify(data.Results));
-          console.log("data.Results[0]: ", JSON.stringify(data.Results[0]));
+          console.log("this.addressDetails ",this.addressDetails);
+          // console.log("this.addressDetails ",JSON.stringify(this.addressDetails) );
+             
         },
       (error:any) => {
         console.log(error);
