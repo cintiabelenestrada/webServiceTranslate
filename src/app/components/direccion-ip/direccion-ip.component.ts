@@ -50,8 +50,8 @@ export class DireccionIPComponent {
   mostrarDireccion() {
     this.direccionIpService.getLatitudeLongitude(this.datosIp.latitude, this.datosIp.longitude).subscribe(
       (data:any) => {
-          console.log("data: ", JSON.stringify(data)); // toda la info q devuelve la api
-          console.log("data.Results[0]: ", JSON.stringify(data.Results[0])); // la info que yo necesito
+          console.log("data: ", JSON.stringify(data)); //1 muestro toda la info q devuelve la api
+          console.log("data.Results[0]: ", JSON.stringify(data.Results[0])); // 2 muestro la info que yo necesito
           // creamos la variable y la modelamos
           this.addressDetails = data.Results[0];
           console.log("this.addressDetails ",this.addressDetails);
