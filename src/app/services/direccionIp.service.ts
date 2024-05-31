@@ -31,6 +31,6 @@ export class DireccionIpService {
         'X-RapidAPI-Host': 'address-from-to-latitude-longitude.p.rapidapi.com'
       })
     }
-    return this._http.get('https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi?lat='+ latitude + 'lng=' +longitude, httpOptions);
+    return this._http.get(`https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi?lat=${latitude}&lng=${longitude}`, httpOptions);
   } 
 }
